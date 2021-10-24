@@ -1,3 +1,3 @@
 # Learning
 
-This repository contains PR with topics on data structures and algorithms.
+This repository contains PR with implementation of data structures and algorithms.
