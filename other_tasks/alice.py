@@ -25,6 +25,7 @@ import sys
 import itertools
 
 
+
 class PathToFile(Exception):
     pass
 
@@ -51,10 +52,8 @@ def open_file():
 def del_duplicate(value):
     try:
         result = ''.join(letter for letter, group in itertools.groupby(
-            value) if len(tuple(group)) == 1)
-        list_of_duplicates = ''.join(letter for letter, group in itertools.groupby(
-            value) if len(tuple(group)) > 1)
-        return del_duplicate(result) if len(list_of_duplicates) >= 1 else result
+            value) if len(tuple(group)) % 2 == 1)
+        return del_duplicate(result) if len(result) != len(value) else result
     except Exception as e:
         return f'{e}'
 
